@@ -24,7 +24,7 @@ int main(){
         // this reads as 'if they match'
         if (!strcmp(search, "Exit")) {
             puts("Exiting...");
-            continue;
+            break;
         }
         // In C, we use ints as booleans
         int some_found = 0;
@@ -37,7 +37,7 @@ int main(){
         if (!some_found) {
             printf("No title found that matches '%s', please try again.\n", search);
         }
-    } while (strcmp(search, "Exit"));
+    } while (1);
 
     return 0;
     
