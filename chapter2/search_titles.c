@@ -9,18 +9,24 @@ int main(){
         "Star Wars",
         "Collateral"
     };
+    // `sizeof` returns size in bytes
     int number_titles = sizeof(titles)/sizeof(titles[0]);
-    printf("Number of titles in database %i\n", number_titles);
+    
     puts("Welcome to the Search Title programme");
+    printf("Number of titles in database %i\n", number_titles);
     // if title is Exit, then leave loop
     char search[80];
     do {
         puts("Search keyword: ");
+        // scanf splits words by spaces
         scanf("%79s", search);
+        // strcmp is true only if they don't match
+        // this reads as 'if they match'
         if (!strcmp(search, "Exit")) {
             puts("Exiting...");
             continue;
         }
+        // In C, we use ints as booleans
         int some_found = 0;
         for (int i=0; i < number_titles; i++) {
             if (strstr(titles[i], search)) {
@@ -29,7 +35,7 @@ int main(){
             }
         }
         if (!some_found) {
-            puts("No title found, try again.");
+            printf("No title found that matches '%s', please try again.\n", search);
         }
     } while (strcmp(search, "Exit"));
 
