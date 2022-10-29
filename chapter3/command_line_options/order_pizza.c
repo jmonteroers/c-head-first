@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
         switch (ch)
         {
         case 'd':
+            // optarg represents the argument for d
             delivery = optarg;
             break;
         
@@ -21,7 +22,8 @@ int main(int argc, char *argv[]) {
             break;
         
         default:
-            fprintf(stderr, "Unknown option: '%s'\n", optarg);
+            // commented out as does not print anything adequate
+            // fprintf(stderr, "Unknown option: '%s'\n", optarg);
             return 1;
         }
     }
@@ -31,10 +33,12 @@ int main(int argc, char *argv[]) {
 
     if (thick)
         puts("Thick crust.");
-    
+
+    // the sentinel char must be falsey
     if (delivery[0])
         printf("To be delivered %s.\n", delivery);
     
+    // use rest of arguments as ingredients
     puts("Ingredients:");
 
     for (count = 0; count < argc; count++) {

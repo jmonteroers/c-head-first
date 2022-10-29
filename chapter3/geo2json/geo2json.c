@@ -1,3 +1,7 @@
+/*
+This script transforms a CSV file, such as `gpsdata.csv` into a json file in stdout, such as `output.json`
+*/
+
 #include <stdio.h>
 
 

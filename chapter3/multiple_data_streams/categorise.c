@@ -20,6 +20,7 @@ int main(int argc, char *argv[]) {
     FILE * file2 = fopen(argv[5], "w");
     FILE *others_file = fopen(argv[argc-1], "w");
 
+    // while there is a single match...
     while (fscanf(in, "%79[^\n]\n", line) == 1) {
         if (strstr(line, argv[2]))
             out_file = file1;
