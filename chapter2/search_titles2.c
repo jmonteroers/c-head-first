@@ -10,8 +10,7 @@ char tracks[][80] = {
 
 void find_track(char search_for[])
 {
-    int i;
-    for (i = 0; i < sizeof(tracks)/sizeof(*tracks); i++) {
+    for (int i = 0; i < sizeof(tracks)/sizeof(*tracks); i++) {
         if (strstr(tracks[i], search_for)) {
             printf("Track %i: '%s'\n", i, tracks[i]);
         }

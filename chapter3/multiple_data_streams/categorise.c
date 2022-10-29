@@ -14,6 +14,7 @@ int main(int argc, char *argv[]) {
     FILE *out_file;
 
     FILE *in = safe_open(argv[1]);
+    // if there was an error in read, stop execution with error code
     if (!in) return 1;
     FILE *file1 = fopen(argv[3], "w");
     FILE * file2 = fopen(argv[5], "w");
