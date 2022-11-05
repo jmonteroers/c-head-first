@@ -9,6 +9,8 @@ void print_reverse(char *s)
     // pointer to last value
     char *t = s + len - 1;
     
+    // while pointer is not smaller than first pointer
+    // at the beginning of the string
     while ( t >= s) {
         printf("%c", *t);
 
